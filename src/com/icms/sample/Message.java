@@ -6,26 +6,44 @@ import java.util.Date;
  * Class holding information on a person.
  */
 public class Message {
-    private Date system_timestamp;
-    private Date TIMESTAMP;
-    private double Ciaone;
-	public double getCiaone() {
-		return Ciaone;
+
+	public static final String MESSAGE_TYPE = "b1b42152f7d1481b5363";
+	
+	private String device;
+	private Date sysTimestamp;
+	private Date timestamp;
+	private double temperature;
+
+	public Date getTimestamp() {
+		return timestamp;
 	}
-	public void setCiaone(double ciaone) {
-		Ciaone = ciaone;
+
+	public void setTimestamp(Date timestamp) {
+		this.timestamp = timestamp;
 	}
-	public Date getTIMESTAMP() {
-		return TIMESTAMP;
+
+	public double getTemperature() {
+		return temperature;
 	}
-	public void setTIMESTAMP(Date tIMESTAMP) {
-		TIMESTAMP = tIMESTAMP;
+
+	public void setTemperature(double temperature) {
+		this.temperature = temperature;
 	}
-	public Date getSystem_timestamp() {
-		return system_timestamp;
+
+	public String getDevice() {
+		return device;
 	}
-	public void setSystem_timestamp(Date system_timestamp) {
-		this.system_timestamp = system_timestamp;
+
+	public void setDevice(String device) {
+		this.device = device;
+	}
+
+	public Date getSysTimestamp() {
+		return sysTimestamp;
+	}
+
+	public void setSysTimestamp(Date sysTimestamp) {
+		this.sysTimestamp = sysTimestamp;
 	}
 
 }

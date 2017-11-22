@@ -27,9 +27,6 @@ public class PersistenceWithJDBCServlet extends HttpServlet {
 
     private MessageDAO mexDAO;
     
-    // METTI QUA IL TUO DEVICE ID
-    private static final String MY_DEVICE_ID = "40DDCFBBD6CCB52A3309";
-
     /** {@inheritDoc} */
     @Override
     public void init() throws ServletException {
@@ -48,7 +45,7 @@ public class PersistenceWithJDBCServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
-            List<Message> resultList = mexDAO.selectAllMessageFromDevice(MY_DEVICE_ID);
+            List<Message> resultList = mexDAO.selectAllMessageFromDevice();
             Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'").create();
             String json = gson.toJson(resultList);  
             response.getWriter().println("{\"messages\":" + json + "}");
